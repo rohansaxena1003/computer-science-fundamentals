@@ -46,5 +46,19 @@ Different states of a process(3 basic states)
     2. Ready: The process is ready to run but the OS for some reason has avoided 
     running it.
     3. Blocked: The process is blocked from running until some event takes place. Eg. a 
-    process is waiting for input from user.
+    process is waiting for input from user. 
 
+DS needed by OS
+    In order to track processes, the OS needs data structures like process list for 
+    processes that are ready to run and another list to keep track of currently running processes. Similarly lists are needed to keep track of blocked processes and also processes in other states.
+
+What is context switch ?
+    Consider this, a process is blocked for some reason. So, the content of its registers will be sent to what is called a 'register context'. So, to resume the process, the OS will restore these registers. This whole thing is called context switching.
+
+Some other states of a process
+    Initial: This is the state when a process is being created.
+    Final: This is the state when a process is completed but not yet cleaned up from the system. This usually happens when a process has a parent process. This is also
+    called ZOMBIE state.
+
+Process Control Block (PCB)
+    This block controls info about all the processes.
