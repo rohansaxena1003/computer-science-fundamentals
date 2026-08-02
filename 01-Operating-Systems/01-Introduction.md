@@ -29,5 +29,5 @@ What is file system?
 What is persistence ?
     It is one of the 3 major responsibilities of the OS to 
     maintain persistence of data. This means that data stored 
-    remained preserved until action is not taken. 'File system' 
+    remains preserved until action is not taken. 'File system' 
     is responsible for ensuring this.

@@ -5,10 +5,11 @@ What is a program and a process ?
 
 What are mechanisms and policies ?
     To create an illusion that system has infinite number of CPUs,
-    the OS uses low-level machinery known as 'mechanisms'. These 
-    mechanisms are used to determine time sharing 
+    the OS uses low-level machinery known as 'mechanisms'. Time 
+    sharing mechanisms are the most used mechanisms.
     The high level machinery is called 'policies'.
-    So, mechanisms decide how to run a program and policies determine which program should the OS run. 
+    So, mechanisms decide how and for how long to run a program 
+    and policies determine which program should the OS run. 
 
 What is 'machine state' of a process ?
     Every component of a machine affected during a process constitutes its machine 
@@ -30,14 +31,14 @@ Process related API
 How does OS create a process ?
     A program is stored in disk space(SSD in today's time). So the first step for
     the OS is to read the bytes in the disk and load the program and its data into 
-    the address space. In earlier times, this loading used to be done 'eagerly' (load all the data at once before running the program). Now, this is done 'lazily' ( load data by bit as and when required ). This bit by bit work is done using 'Paging' and 'Swapping' techniques.
+    the address space. In earlier times, this loading used to be done 'eagerly' (load all the data at once before running the program). Now, this is done 'lazily' 
+    ( load data by bit as and when required ). This bit by bit work is done using 'Paging' and 'Swapping' techniques.
     The second step is to allocate some memory to run-time stack(also called stack).
     This stack stores local variables, function parameters and return addresses. The OS
     may also allocate some memory for 'heap'. This heap is explicitly used to store
     dynamically allocated data and is needed for DS like LL, hash tables, trees etc.
-    Initially, the heap is small in size but it can grow very during the process. It 
-    asks for more memory from the OS by using malloc() API.
-    The third step is to some initialization tasks related to I/O.
+    Initially, the heap is small in size but it can grow very large during the process. It asks for more memory from the OS by using malloc() API as and when needed.
+    The third step is to do some initialization tasks related to I/O.
     The last step is to start the program at main() and handover control of part of
     CPU to the process.
 
@@ -57,8 +58,8 @@ What is context switch ?
 
 Some other states of a process
     Initial: This is the state when a process is being created.
-    Final: This is the state when a process is completed but not yet cleaned up from the system. This usually happens when a process has a parent process. This is also
-    called ZOMBIE state.
+    Final: This is the state when a process is completed but not yet cleaned up from the system. This usually happens when a process has a parent process. This state 
+    is also called ZOMBIE state.
 
 Process Control Block (PCB)
     This block controls info about all the processes.
